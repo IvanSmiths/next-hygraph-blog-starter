@@ -12,7 +12,5 @@ Login to your HyGraph account and create a new template, selecting the **"Basic 
 Create a `.env.local` file in the root of this repository and add the following line: `HYGRAPH_ENDPOINT=insert-your-endpoint-here`.
 For finding the endpoint, click on the link "Project Settings" in the sidebar on the left, the on "API Access". The string that you want to copy is the "Content API".
 
-<div style="display: flex; gap: 3rem">
-<img alt="Navigate to endpoint" src="public/docs/navigate-to-endpoint.png" style="object-fit: cover" height="759" width='510'>
-<img alt="Select endpoint" src="public/docs/endpoint.png" height="416" width='816'>
-</div>
+<img alt="Navigate to endpoint" src="public/docs/navigate-to-endpoint.png" style="object-fit: cover" height="379.5" width='205'>
+<img alt="Select endpoint" src="public/docs/endpoint.png" height="208" width='408'>
