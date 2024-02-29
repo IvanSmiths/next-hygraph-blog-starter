@@ -30,19 +30,24 @@ async function getAllPosts(): Promise<Posts[]> {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
+      cache: "no-cache",
       body: JSON.stringify({
         query: `
-                      query getAllPosts {
-                        posts(orderBy: publishedAt_DESC) {
-                          id
-                          slug
-                          title
-                          excerpt
-                          date
-                          keywords
-                        }
-                      }
-                    `,
+              query getAllPosts {
+                posts(
+                orderBy: createdAt_DESC, 
+                stage:PUBLISHED
+                ) 
+                {
+                  id
+                  slug
+                  title
+                  excerpt
+                  date
+                  keywords
+                }
+              }
+            `,
       }),
     },
   );
