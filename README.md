@@ -7,5 +7,10 @@ Logo by <a href="https://www.freepik.com/free-vector/gradient-code-development-l
 
 Login to your HyGraph account and create a new template, selecting the **"Basic blog"** template provided from HyGraph's team.
 
+<img alt="Select Blog Starter" src="public/docs/blog-starter.png" width='420'>
+
 Create a `.env.local` file in the root of this repository and add the following line: `HYGRAPH_ENDPOINT=insert-your-endpoint-here`.
 For finding the endpoint, click on the link "Project Settings" in the sidebar on the left, the on "API Access". The string that you want to copy is the "Content API".
+
+<img alt="Navigate to endpoint" src="public/docs/navigate-to-endpoint.png" width='420'>
+<img alt="Select endpoint" src="public/docs/endpoint.png" width='420'>
