@@ -5,7 +5,7 @@ Logo by <a href="https://www.freepik.com/free-vector/gradient-code-development-l
 
 ## Get up and running
 
-Login to your HyGraph account and create a new template, selecting the **"Basic blog"** template provided from HyGraph's team.
+[Login to your HyGraph account](https://auth.hygraph.com/login?state=hKFo2SBtVjVaNEtOTGNBUzc3ZzdlZktlelFocnNyNUFMRGU0ZqFupWxvZ2luo3RpZNkgVWJMcWR3X2xJaV9wVGk4Y1ZxcGxHNTRkN1J2RDh4XzmjY2lk2SA4VldTZHlVaHRaVDQzbkFpcHIyZmpLUmhqSm1wOHNZeQ&client=8VWSdyUhtZT43nAipr2fjKRhjJmp8sYy&protocol=oauth2&response_type=id_token&redirect_uri=https%3A%2F%2Fapp.hygraph.com%2Fauth&scope=openid%20https%3A%2F%2Fgraphcms.com%2FloginsCount&mode=login&nonce=kosQOJcAcpy4~ImeadghrxDX8OuCzcTL&auth0Client=eyJuYW1lIjoiYXV0aDAuanMiLCJ2ZXJzaW9uIjoiOS4xOS4xIn0%3D) and create a new template, selecting the **"Basic blog"** template provided from HyGraph's team.
 
 <img alt="Select Blog Starter" src="public/docs/blog-starter.png" height="auto" width='420'>
 
