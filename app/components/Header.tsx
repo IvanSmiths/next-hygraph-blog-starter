@@ -7,7 +7,7 @@ const Header: FC = () => {
         <strong className="font-bold text-secondaryAccent">
           John Doe here, welcome to my blog.
         </strong>{" "}
-        My frequent topics are about React, Next.js, HyGraph and more.
+        My frequent topics are about React, Next.js, Hygraph and more.
       </h1>
     </section>
   );
