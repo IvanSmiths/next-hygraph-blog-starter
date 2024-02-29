@@ -4,6 +4,11 @@ export type Posts = {
   title: string;
   excerpt: string;
   date: string;
+  keywords: Keywords;
+};
+
+type Keywords = {
+  stack: string[];
 };
 
 type QueryResult = {
@@ -34,6 +39,7 @@ async function getAllPosts(): Promise<Posts[]> {
                           title
                           excerpt
                           date
+                          keywords
                         }
                       }
                     `,

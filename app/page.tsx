@@ -9,9 +9,12 @@ export default async function Home() {
   return (
     <>
       <Header />
-      {posts.map((post: Posts) => (
-        <Post post={post} />
-      ))}
+      <section className="flex flex-col gap-small pt-medium">
+        <h2 className="text-xl">My Articles:</h2>
+        {posts.map((post: Posts) => (
+          <Post key={post.id} post={post} />
+        ))}
+      </section>
     </>
   );
 }

@@ -3,9 +3,16 @@
 @tailwind utilities;
 
 :root {
+  /* colors */
   --primary: #161719;
+  --primary-light: #1D2028;
   --secondary: #BAC1D1;
-  --secondary-bold: #FEFEFF;
+  --secondary-accent: #FEFEFF;
+
+  /* spacing */
+  --small: 20px;
+  --medium: 60px;
+  --section: 160px;
 }
 
 body {

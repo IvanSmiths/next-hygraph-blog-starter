@@ -10,8 +10,14 @@ const config: Config = {
     extend: {
       colors: {
         primary: "var(--primary)",
+        primaryLight: "var(--primary-light)",
         secondary: "var(--secondary)",
-        secondaryBold: "var(--secondary-bold)",
+        secondaryAccent: "var(--secondary-accent)",
+      },
+      spacing: {
+        small: "var(--small)",
+        medium: "var(--medium)",
+        section: "var(--section)",
       },
     },
   },
