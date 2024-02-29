@@ -79,6 +79,10 @@ type Author = {
   picture: AuthorPicture;
 };
 
+type Time = {
+  date: string;
+};
+
 export type {
   Keywords,
   PillProps,
@@ -88,4 +92,5 @@ export type {
   Posts,
   Response,
   ResponsePage,
+  Time,
 };

@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Posts } from "@/utils/types";
 import Link from "next/link";
 import PillWrapper from "@/app/globalComponents/PillWrapper";
+import Time from "@/app/globalComponents/Time";
 
 type PostProps = {
   post: Posts;
@@ -16,7 +17,7 @@ const Post: FC<PostProps> = ({ post }) => {
         className="flex flex-col gap-2 bg-primaryLight p-small rounded-xl"
       >
         <h3 className="font-bold text-xl text-secondaryAccent">{title}</h3>
-        <span>{date}</span>
+        <Time date={date} />
         <p>{excerpt}</p>
         <PillWrapper lightBg={true} map={post} />
       </div>
