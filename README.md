@@ -5,6 +5,8 @@
 # HyBlog, a Next.js/Hygraph typesafe blog starter
 A starter repo for a blog built with Next.js, Hygraph, TypeScript, and Tailwind CSS.
 
+<img alt="Blog" src="public/docs/blog.png" height="auto" width='1000'>
+
 Logo by <a href="https://www.freepik.com/free-vector/gradient-code-development-logo_11817413.htm#query=dev%20logo%20marketing&position=0&from_view=keyword&track=ais&uuid=b3f1ecea-40b2-490c-aee5-62365fdc170a">Freepik</a>
 
 ## Get up and running
