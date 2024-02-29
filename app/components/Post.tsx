@@ -17,7 +17,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
       <span>{date}</span>
       <p>{excerpt}</p>
       <div className="flex flex-wrap gap-2">
-        {keywords.stack.map(
+        {keywords?.stack.map(
           (keyword: string, index: React.Key | null | undefined) => (
             <Pill key={index} label={keyword} />
           ),
