@@ -36,7 +36,52 @@ async function getAllPosts(): Promise<Posts[]> {
   return data.posts;
 }
 
-export async function getPost(slug: string): Promise<PostPage[]> {
+async function getAllPostsTest(pageNumber: number): Promise<any> {
+  if (!process.env.HYGRAPH_ENDPOINT) {
+    throw new Error("Environment variable HYGRAPH_ENDPOINT is not set.");
+  }
+  const response: globalThis.Response = await fetch(
+    process.env.HYGRAPH_ENDPOINT,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        query: `
+             query PostsPagination {
+              postsConnection(skip:${(pageNumber - 1) * 2}, first: 1) {
+                aggregate {
+                  count
+                }
+                edges {
+                  node {
+                    title
+                    slug
+                    keywords
+                    id
+                    date
+                  }
+                }
+                pageInfo {
+                  endCursor
+                  hasNextPage
+                  hasPreviousPage
+                  pageSize
+                  startCursor
+                }
+              }
+            }
+            `,
+      }),
+    },
+  );
+  const json = await response.json();
+  return json.data;
+}
+
+async function getPost(slug: string): Promise<PostPage[]> {
   if (!process.env.HYGRAPH_ENDPOINT) {
     throw new Error("Environment variable HYGRAPH_ENDPOINT is not set.");
   }
@@ -94,4 +139,4 @@ export async function getPost(slug: string): Promise<PostPage[]> {
   return data.post;
 }
 
-export { getAllPosts };
+export { getAllPosts, getPost, getAllPostsTest };
