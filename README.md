@@ -1,5 +1,5 @@
 # Next.js with Hygraph Blog Starter
-A starter repo for a blog bult with Next.js, HyGraph, TypeScript, and Tailwind CSS. 
+A starter repo for a blog built with Next.js, HyGraph, TypeScript, and Tailwind CSS. 
 
 Logo by <a href="https://www.freepik.com/free-vector/gradient-code-development-logo_11817413.htm#query=dev%20logo%20marketing&position=0&from_view=keyword&track=ais&uuid=b3f1ecea-40b2-490c-aee5-62365fdc170a">Freepik</a>
 
@@ -14,3 +14,7 @@ For finding the endpoint, click on the link "Project Settings" in the sidebar on
 
 <img alt="Navigate to endpoint" src="public/docs/navigate-to-endpoint.png" style="object-fit: cover" height="379.5" width='255'>
 <img alt="Select endpoint" src="public/docs/endpoint.png" height="208" width='408'>
+
+## Schema structure
+
+The schema is identical to the "Basic blog" template.
