@@ -19,4 +19,5 @@ For finding the endpoint, click on the link "Project Settings" in the sidebar on
 ## Schema structure
 
 The schema have one extra field compared to the **"Basic blog"**'s schema. It's a **JSON Editor** and is used for displaying the keywords (an array of strings) of the blogpost.
+
 <img alt="Select Blog Starter" src="public/docs/keywords.png" height="auto" width='500'>
