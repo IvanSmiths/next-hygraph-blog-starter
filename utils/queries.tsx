@@ -1,33 +1,35 @@
 export type Posts = {
-    slug: string;
-    title: string;
-    excerpt: string;
-    date: string;
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  date: string;
 };
 
 type QueryResult = {
-    posts: Posts[];
+  posts: Posts[];
 };
 
 type Response = {
-    data: QueryResult;
+  data: QueryResult;
 };
 async function getAllPosts(): Promise<Posts[]> {
-    if (!process.env.HYGRAPH_ENDPOINT) {
-        throw new Error("Environment variable HYGRAPH_ENDPOINT is not set.");
-    }
-    const response: globalThis.Response = await fetch(
-        process.env.HYGRAPH_ENDPOINT,
-        {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-            },
-            body: JSON.stringify({
-                query: `
+  if (!process.env.HYGRAPH_ENDPOINT) {
+    throw new Error("Environment variable HYGRAPH_ENDPOINT is not set.");
+  }
+  const response: globalThis.Response = await fetch(
+    process.env.HYGRAPH_ENDPOINT,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        query: `
                       query getAllPosts {
                         posts(orderBy: publishedAt_DESC) {
+                          id
                           slug
                           title
                           excerpt
@@ -35,11 +37,11 @@ async function getAllPosts(): Promise<Posts[]> {
                         }
                       }
                     `,
-            }),
-        },
-    );
-    const { data }: Response = await response.json();
-    return data.posts;
+      }),
+    },
+  );
+  const { data }: Response = await response.json();
+  return data.posts;
 }
 
-export { getAllPosts }
+export { getAllPosts };
