@@ -1,14 +1,14 @@
-import React from "react";
-import { Posts } from "@/utils/queries";
-import Pill from "@/app/globalComponents/Pill";
+import { FC } from "react";
+import { Posts } from "@/utils/types";
 import Link from "next/link";
+import PillWrapper from "@/app/globalComponents/PillWrapper";
 
 type PostProps = {
   post: Posts;
 };
 
-const Post: React.FC<PostProps> = ({ post }) => {
-  const { id, title, excerpt, date, keywords, slug } = post;
+const Post: FC<PostProps> = ({ post }) => {
+  const { id, title, excerpt, date, slug } = post;
   return (
     <Link href={`posts/${slug}`}>
       <div
@@ -18,13 +18,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
         <h3 className="font-bold text-xl text-secondaryAccent">{title}</h3>
         <span>{date}</span>
         <p>{excerpt}</p>
-        <div className="flex flex-wrap gap-2">
-          {keywords?.stack.map(
-            (keyword: string, index: React.Key | null | undefined) => (
-              <Pill key={index} label={keyword} />
-            ),
-          )}
-        </div>
+        <PillWrapper lightBg={true} map={post} />
       </div>
     </Link>
   );

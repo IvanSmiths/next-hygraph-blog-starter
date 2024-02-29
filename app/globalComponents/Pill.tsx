@@ -1,11 +1,14 @@
-import React, { FC } from "react";
+import { FC } from "react";
+import { PillProps } from "@/utils/types";
 
-type PillProps = {
-  label: string;
-};
-
-const Pill: FC<PillProps> = ({ label }) => {
-  return <span className="bg-primary p-3 rounded-xl w-fit">{label}</span>;
+const Pill: FC<PillProps> = ({ label, lightBg }) => {
+  return (
+    <span
+      className={`${lightBg ? "bg-primary" : "bg-primaryLight"} p-3 rounded-xl w-fit`}
+    >
+      {label}
+    </span>
+  );
 };
 
 export default Pill;

@@ -1,7 +1,7 @@
-import { getAllPosts, Posts } from "@/utils/queries";
+import { getAllPosts } from "@/utils/queries";
 import Header from "@/app/components/Header";
-import React from "react";
 import Post from "@/app/components/Post";
+import { Posts } from "@/utils/types";
 
 export default async function Home() {
   const posts: Posts[] = await getAllPosts();

@@ -1,25 +1,5 @@
-import { RichTextContent } from "@graphcms/rich-text-types";
+import { PostPage, Posts, Response, ResponsePage } from "@/utils/types";
 
-export type Posts = {
-  id: string;
-  slug: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  keywords: Keywords;
-};
-
-type Keywords = {
-  stack: string[];
-};
-
-type QueryResult = {
-  posts: Posts[];
-};
-
-type Response = {
-  data: QueryResult;
-};
 async function getAllPosts(): Promise<Posts[]> {
   if (!process.env.HYGRAPH_ENDPOINT) {
     throw new Error("Environment variable HYGRAPH_ENDPOINT is not set.");
@@ -56,42 +36,6 @@ async function getAllPosts(): Promise<Posts[]> {
   return data.posts;
 }
 
-export type PostPage = {
-  id: string;
-  publishedAt: string;
-  slug: string;
-  title: string;
-  date: string;
-  excerpt: string;
-  content: RichTextContent;
-  coverImage: CoverImage;
-  author: Author;
-};
-
-type CoverImage = {
-  url: string;
-  width: string;
-  height: string;
-};
-
-type Author = {
-  remoteTypeName: string;
-  id: string;
-  name: string;
-  title: string;
-  picture: AuthorPicture;
-};
-
-type AuthorPicture = CoverImage;
-
-type QueryResultPage = {
-  post: PostPage[];
-};
-
-type ResponsePage = {
-  data: QueryResultPage;
-};
-
 export async function getPost(slug: string): Promise<PostPage[]> {
   if (!process.env.HYGRAPH_ENDPOINT) {
     throw new Error("Environment variable HYGRAPH_ENDPOINT is not set.");
@@ -112,6 +56,7 @@ export async function getPost(slug: string): Promise<PostPage[]> {
               title
               date
               excerpt
+              keywords
               content {
                 raw
                 html
