@@ -30,7 +30,6 @@ async function getAllPosts(): Promise<Posts[]> {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      cache: "no-cache",
       body: JSON.stringify({
         query: `
               query getAllPosts {
