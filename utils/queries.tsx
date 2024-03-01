@@ -46,6 +46,7 @@ async function getPost(slug: string): Promise<PostPage[]> {
       "Content-Type": "application/json",
       Accept: "application/json",
     },
+    cache: "no-cache",
     body: JSON.stringify({
       query: `
               query Posts($slug: String!) {

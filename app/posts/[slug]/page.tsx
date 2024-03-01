@@ -4,6 +4,7 @@ import { PostProps } from "@/utils/types";
 import PillWrapper from "@/app/globalComponents/PillWrapper";
 import Time from "@/app/globalComponents/Time";
 import { RichText } from "@graphcms/rich-text-react-renderer";
+import Blockquote from "@/app/posts/[slug]/components/Blockquote";
 
 export default async function Page({ params }: PostProps) {
   const post: any = await getPost(params.slug);
@@ -12,7 +13,7 @@ export default async function Page({ params }: PostProps) {
     return notFound();
   }
 
-  console.log(post);
+  console.log(post.content.raw);
 
   return (
     <article className="flex flex-col gap-small">
@@ -23,7 +24,14 @@ export default async function Page({ params }: PostProps) {
         <Time date={post.date} />
       </div>
       <PillWrapper map={post} lightBg={false} />
-      <RichText content={post.content.raw} />
+      <RichText
+        content={post.content.raw}
+        renderers={{
+          h2: ({ children }) => <h2 className={`text-3xl`}>{children}</h2>,
+          p: ({ children }) => <h2 className={`text-md`}>{children}</h2>,
+          blockquote: ({ children }) => <Blockquote children={children} />,
+        }}
+      />
     </article>
   );
 }
