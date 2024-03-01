@@ -12,6 +12,7 @@ const config: Config = {
         brand: "var(--brand)",
         primary: "var(--primary)",
         primaryLight: "var(--primary-light)",
+        primaryLighter: "var(--primary-lighter)",
         secondary: "var(--secondary)",
         secondaryAccent: "var(--secondary-accent)",
       },

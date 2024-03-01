@@ -6,7 +6,8 @@
   /* colors */
   --brand: #6594EE;
   --primary: #161719;
-  --primary-light: #1D2028;
+  --primary-light: #33373d;
+  --primary-lighter: #1D2028;
   --secondary: #BAC1D1;
   --secondary-accent: #FEFEFF;
 
@@ -19,4 +20,8 @@
 body {
   color: var(--secondary);
   background: var(--primary)
+}
+
+pre code {
+  line-height: 27px !important;
 }
