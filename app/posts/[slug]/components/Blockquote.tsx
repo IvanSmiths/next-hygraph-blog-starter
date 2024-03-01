@@ -3,7 +3,7 @@ import { LinkEmbedProps } from "@graphcms/rich-text-types";
 
 const Blockquote: FC<LinkEmbedProps> = ({ children }) => {
   return (
-    <div className="bg-primaryLight p-small rounded-xl relative border-[1px] border-brand">
+    <div className="bg-primaryLighter p-small rounded-xl relative border-[1px] border-brand">
       <picture className="absolute -right-5 -top-5 p-2 rounded-[100%] bg-primary">
         <img src="/icons/warning.svg" alt="warning" height="35" width="35" />
       </picture>
