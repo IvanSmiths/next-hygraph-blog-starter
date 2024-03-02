@@ -1,4 +1,5 @@
 import { RichTextContent } from "@graphcms/rich-text-types";
+import { ChartTypeRegistry } from "chart.js/auto";
 
 type Keywords = {
   stack: string[];
@@ -6,8 +7,11 @@ type Keywords = {
 };
 
 type Chart = {
-  chart: string;
+  chart?: string;
+  destroy: any;
 };
+
+type ValidChartType = keyof ChartTypeRegistry;
 
 type Stack = {
   stack: string[];
@@ -50,7 +54,10 @@ type ChartProps = {
   labels: string[];
   data: string[];
   label: string;
+  type: string;
 };
+
+type ChartRefType = HTMLCanvasElement & { chart?: Chart };
 
 type Posts = {
   id: string;
@@ -96,6 +103,7 @@ type Time = {
 
 export type {
   ChartProps,
+  ChartRefType,
   Keywords,
   PillProps,
   PillWrapperProps,
@@ -105,4 +113,5 @@ export type {
   Response,
   ResponsePage,
   Time,
+  ValidChartType,
 };

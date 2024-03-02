@@ -2,37 +2,50 @@
 
 import React, { FC, useEffect, useRef } from "react";
 import { Chart } from "chart.js/auto";
-import { ChartProps } from "@/utils/types";
+import { ChartProps, ChartRefType, ValidChartType } from "@/utils/types";
 
-const Charts: FC<ChartProps> = ({ labels, data, label }) => {
-  const chartRef = useRef(null);
+const Charts: FC<ChartProps> = ({ labels, data, label, type }) => {
+  const chartRef = useRef<ChartRefType>(null);
   console.log(data);
   useEffect(() => {
     if (chartRef.current) {
-      //@ts-ignore
       if (chartRef.current.chart) {
-        //@ts-ignore
         chartRef.current.chart.destroy();
       }
-      //@ts-ignore
-      const context = chartRef.current.getContext("2d");
+      if (chartRef.current) {
+        const context = chartRef.current.getContext("2d");
 
-      //@ts-ignore
-      chartRef.current.chart = new Chart(context, {
-        type: "bar",
-        data: {
-          labels: labels,
-          datasets: [
-            {
-              label: label,
-              data: data,
-              backgroundColor: "#6594EE",
+        if (context) {
+          if (chartRef.current.chart) {
+            chartRef.current.chart.destroy();
+          }
+
+          chartRef.current.chart = new Chart(context, {
+            type: (type as ValidChartType) || ["bar"],
+            data: {
+              labels: labels,
+              datasets: [
+                {
+                  label: label,
+                  data: data,
+                  backgroundColor: "#6594EE",
+                  borderColor: "#33373d",
+                  pointRadius: type === "line" ? 6 : undefined,
+                },
+              ],
             },
-          ],
-        },
-      });
+          });
+        }
+      }
     }
-  }, [data, labels]);
+    return () => {
+      if (chartRef.current) {
+        if (chartRef.current.chart) {
+          chartRef.current.chart.destroy();
+        }
+      }
+    };
+  }, [type, data, label, labels]);
   return (
     <>
       <canvas ref={chartRef}></canvas>

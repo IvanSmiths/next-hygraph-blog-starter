@@ -16,6 +16,7 @@ export default async function Page({ params }: PostProps) {
   }
 
   const labels = post.chart.labels;
+  const type = post.chart.type;
   const data = post.chart.datasets.data;
   const label = post.chart.datasets.label;
 
@@ -27,7 +28,8 @@ export default async function Page({ params }: PostProps) {
         <dt className="text-sm font-medium leading-5">Published on:</dt>
         <Time date={post.date} />
       </div>
-      <Charts labels={labels} data={data} label={label} />
+      {}
+      <Charts labels={labels} data={data} label={label} type={type} />
       <PillWrapper map={post} lightBg={false} />
       <RichText
         content={post.content.raw}
