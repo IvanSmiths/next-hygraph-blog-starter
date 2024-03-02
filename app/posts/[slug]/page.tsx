@@ -6,6 +6,7 @@ import Time from "@/app/globalComponents/Time";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import Blockquote from "@/app/posts/[slug]/components/Blockquote";
 import Codeblock from "@/app/posts/[slug]/components/Codeblock";
+import Charts from "@/app/posts/[slug]/components/Chart";
 
 export default async function Page({ params }: PostProps) {
   const post: any = await getPost(params.slug);
@@ -24,6 +25,7 @@ export default async function Page({ params }: PostProps) {
         <dt className="text-sm font-medium leading-5">Published on:</dt>
         <Time date={post.date} />
       </div>
+      <Charts />
       <PillWrapper map={post} lightBg={false} />
       <RichText
         content={post.content.raw}
