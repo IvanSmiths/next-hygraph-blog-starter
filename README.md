@@ -20,6 +20,25 @@ For finding the endpoint, click on the link "Project Settings" in the sidebar on
 
 ## Schema structure
 
-The schema have one extra field compared to the **"Basic blog"**'s schema. It's a **JSON Editor** and is used for displaying the keywords (an array of strings) of the blogpost.
+The schema have one extra field compared to the **"Basic blog"**'s schema:
+
+### - Keywords
+
+ A **JSON Editor** and is used for displaying the keywords (an array of strings) of the blogpost.
 
 <img alt="Select Blog Starter" src="public/docs/keywords.png" height="auto" width='500'>
+
+### - Chart
+
+A  **JSON Editor** used for display data with charts. It uses Charts.js.
+
+<img alt="Chart" src="public/docs/chart.png" height="auto" width='500'>
+
+Json data structure:
+
+- type: It defines the type of charts to be displayed. See the [full list of types here](https://www.chartjs.org/docs/latest/charts/area.html). If the type is not set, a bar chart will be displayed by default.
+- labels: An array that will be used as labels in the chart.
+- data: The data that will be shown.
+- label: The "title" of the chart.
+
+<img alt="Chart structure" src="public/docs/chart-structure.png" height="auto" width='500'>
