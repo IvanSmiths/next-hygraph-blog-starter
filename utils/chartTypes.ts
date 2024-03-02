@@ -13,15 +13,10 @@ type Chart = {
 };
 
 type ChartType = {
-  label: Dataset<string & number>;
-  datasets: Dataset<string & number>;
+  label: string;
+  data: string[] | number[];
   type: ValidChartType;
   labels: string[];
-};
-
-type Dataset<T> = {
-  data: T[];
-  label: string;
 };
 
 export type { ChartProps, Chart, ChartRefType, ValidChartType };

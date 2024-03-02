@@ -7,8 +7,8 @@ import { ChartProps, ChartRefType, ValidChartType } from "@/utils/chartTypes";
 const Charts: FC<ChartProps> = ({ post }) => {
   const labels = post?.chart?.labels ?? [];
   const type = post?.chart?.type ?? "bar";
-  const data = post?.chart?.datasets.data ?? [];
-  const label = post?.chart?.datasets.label ?? "";
+  const data = post?.chart?.data ?? [];
+  const label = post?.chart?.label ?? "";
 
   const chartRef = useRef<ChartRefType>(null);
 
