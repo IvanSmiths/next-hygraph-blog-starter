@@ -1,4 +1,5 @@
 import { RichTextContent } from "@graphcms/rich-text-types";
+import { Chart } from "@/utils/chartTypes";
 
 type Keywords = {
   stack: string[];
@@ -60,6 +61,7 @@ type PostPage = {
   date: string;
   excerpt: string;
   keywords: Keywords;
+  chart: Chart;
   content: RichTextContent;
   coverImage: CoverImage;
   author: Author;
