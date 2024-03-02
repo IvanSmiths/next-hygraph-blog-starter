@@ -3,11 +3,9 @@
 </div>
 
 # HyBlog, a Next.js/Hygraph typesafe blog starter
-A starter repo for a blog built with Next.js, Hygraph, TypeScript, and Tailwind CSS.
+A starter repo for a blog built with Next.js (app router), Hygraph, TypeScript, Tailwind CSS, Chart.js and React Synthax Highlighter.
 
 <img alt="Blog" src="public/docs/blog.png" height="auto" width='1000'>
-
-Logo by <a href="https://www.freepik.com/free-vector/gradient-code-development-logo_11817413.htm#query=dev%20logo%20marketing&position=0&from_view=keyword&track=ais&uuid=b3f1ecea-40b2-490c-aee5-62365fdc170a">Freepik</a>
 
 ## Get up and running
 
@@ -20,21 +18,23 @@ For finding the endpoint, click on the link "Project Settings" in the sidebar on
 
 ## Schema structure
 
-The schema have one extra field compared to the **"Basic blog"**'s schema:
+The schema have two optional extra field compared to the **"Basic blog"**'s schema:
 
 ### - Keywords
 
  A **JSON Editor** and is used for displaying the keywords (an array of strings) of the blogpost.
 
+<img alt="Select Blog Starter" src="public/docs/keywords-structure.png" height="auto" width='500'>
+<br>
 <img alt="Select Blog Starter" src="public/docs/keywords.png" height="auto" width='500'>
 
 ### - Chart
 
-A  **JSON Editor** used for display data with charts. It uses Charts.js.
+A  **JSON Editor** used for display data with charts.
 
 <img alt="Chart" src="public/docs/chart.png" height="auto" width='500'>
 
-Json data structure:
+### Json data structure:
 
 - type: It defines the type of charts to be displayed. See the [full list of types here](https://www.chartjs.org/docs/latest/charts/area.html). If the type is not set, a bar chart will be displayed by default.
 - labels: An array that will be used as labels in the chart.
@@ -42,3 +42,5 @@ Json data structure:
 - label: The "title" of the chart.
 
 <img alt="Chart structure" src="public/docs/chart-structure.png" height="auto" width='500'>
+
+Logo by <a href="https://www.freepik.com/free-vector/gradient-code-development-logo_11817413.htm#query=dev%20logo%20marketing&position=0&from_view=keyword&track=ais&uuid=b3f1ecea-40b2-490c-aee5-62365fdc170a">Freepik</a>
