@@ -51,10 +51,7 @@ type PostProps = {
 };
 
 type ChartProps = {
-  labels: string[];
-  data: string[];
-  label: string;
-  type: string;
+  post: any;
 };
 
 type ChartRefType = HTMLCanvasElement & { chart?: Chart };

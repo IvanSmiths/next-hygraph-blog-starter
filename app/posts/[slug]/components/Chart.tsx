@@ -4,7 +4,12 @@ import React, { FC, useEffect, useRef } from "react";
 import { Chart } from "chart.js/auto";
 import { ChartProps, ChartRefType, ValidChartType } from "@/utils/types";
 
-const Charts: FC<ChartProps> = ({ labels, data, label, type }) => {
+const Charts: FC<ChartProps> = ({ post }) => {
+  const labels = post.chart.labels;
+  const type = post.chart.type;
+  const data = post.chart.datasets.data;
+  const label = post.chart.datasets.label;
+
   const chartRef = useRef<ChartRefType>(null);
   console.log(data);
   useEffect(() => {
