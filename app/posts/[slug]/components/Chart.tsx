@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { FC, useEffect, useRef } from "react";
 import { Chart } from "chart.js/auto";
+import { ChartProps } from "@/utils/types";
 
-const Charts = ({ labels, data, label }) => {
+const Charts: FC<ChartProps> = ({ labels, data, label }) => {
   const chartRef = useRef(null);
   console.log(data);
   useEffect(() => {

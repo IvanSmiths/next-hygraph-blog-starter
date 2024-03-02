@@ -46,6 +46,12 @@ type PostProps = {
   title: string;
 };
 
+type ChartProps = {
+  labels: string[];
+  data: string[];
+  label: string;
+};
+
 type Posts = {
   id: string;
   slug: string;
@@ -89,6 +95,7 @@ type Time = {
 };
 
 export type {
+  ChartProps,
   Keywords,
   PillProps,
   PillWrapperProps,
