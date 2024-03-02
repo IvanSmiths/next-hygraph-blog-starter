@@ -19,12 +19,11 @@ export default async function Page({ params }: PostProps) {
     <article className="flex flex-col gap-small">
       <h1 className="text-3xl text-secondaryAccent">{post.title}</h1>
       <h2>{post.excerpt}</h2>
+      <PillWrapper map={post} lightBg={false} />
       <div className="flex items-center gap-2">
         <dt className="text-sm font-medium leading-5">Published on:</dt>
         <Time date={post.date} />
       </div>
-      {post.chart ? <Charts post={post} /> : null}
-      <PillWrapper map={post} lightBg={false} />
       <RichText
         content={post.content.raw}
         renderers={{
@@ -34,6 +33,7 @@ export default async function Page({ params }: PostProps) {
           code_block: ({ children }) => <Codeblock children={children} />,
         }}
       />
+      {post.chart ? <Charts post={post} /> : null}
     </article>
   );
 }
