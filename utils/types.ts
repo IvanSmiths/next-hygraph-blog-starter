@@ -5,6 +5,10 @@ type Keywords = {
   keywords: Stack;
 };
 
+type Chart = {
+  chart: string;
+};
+
 type Stack = {
   stack: string[];
 };
@@ -60,6 +64,7 @@ type PostPage = {
   date: string;
   excerpt: string;
   keywords: Keywords;
+  chart: Chart;
   content: RichTextContent;
   coverImage: CoverImage;
   author: Author;

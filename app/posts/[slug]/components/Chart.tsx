@@ -3,9 +3,9 @@
 import React, { useEffect, useRef } from "react";
 import { Chart } from "chart.js/auto";
 
-const Charts = () => {
+const Charts = ({ labels, data, label }) => {
   const chartRef = useRef(null);
-
+  console.log(data);
   useEffect(() => {
     if (chartRef.current) {
       //@ts-ignore
@@ -16,23 +16,22 @@ const Charts = () => {
       //@ts-ignore
       const context = chartRef.current.getContext("2d");
 
-      const newChart = new Chart(context, {
+      //@ts-ignore
+      chartRef.current.chart = new Chart(context, {
         type: "bar",
         data: {
-          labels: ["1", "2"],
+          labels: labels,
           datasets: [
             {
-              label: "test",
-              data: [23, 23, 23],
-              backgroundColor: "red",
+              label: label,
+              data: data,
+              backgroundColor: "#6594EE",
             },
           ],
         },
       });
-      //@ts-ignore
-      chartRef.current.chart = newChart;
     }
-  }, []);
+  }, [data, labels]);
   return (
     <>
       <canvas ref={chartRef}></canvas>

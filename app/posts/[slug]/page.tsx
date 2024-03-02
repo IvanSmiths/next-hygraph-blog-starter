@@ -15,7 +15,9 @@ export default async function Page({ params }: PostProps) {
     return notFound();
   }
 
-  console.log(post.content.raw.children[2]);
+  const labels = post.chart.labels;
+  const data = post.chart.datasets.data;
+  const label = post.chart.datasets.label;
 
   return (
     <article className="flex flex-col gap-small">
@@ -25,7 +27,7 @@ export default async function Page({ params }: PostProps) {
         <dt className="text-sm font-medium leading-5">Published on:</dt>
         <Time date={post.date} />
       </div>
-      <Charts />
+      <Charts labels={labels} data={data} label={label} />
       <PillWrapper map={post} lightBg={false} />
       <RichText
         content={post.content.raw}

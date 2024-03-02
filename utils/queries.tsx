@@ -58,6 +58,7 @@ async function getPost(slug: string): Promise<PostPage[]> {
               date
               excerpt
               keywords
+              chart
               content {
                 raw
                 html
