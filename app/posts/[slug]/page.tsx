@@ -21,7 +21,7 @@ export default async function Page({ params }: PostProps) {
       <h2>{post.excerpt}</h2>
       <PillWrapper map={post} lightBg={false} />
       <div className="flex items-center gap-2">
-        <dt className="text-sm font-medium leading-5">Published on:</dt>
+        <span className="text-sm font-medium leading-5">Published on:</span>
         <Time date={post.date} />
       </div>
       <RichText
