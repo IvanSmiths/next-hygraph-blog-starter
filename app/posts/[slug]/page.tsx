@@ -5,8 +5,16 @@ import PillWrapper from "@/app/globalComponents/PillWrapper";
 import Time from "@/app/globalComponents/Time";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import Blockquote from "@/app/posts/[slug]/components/Blockquote";
-import Codeblock from "@/app/posts/[slug]/components/Codeblock";
-import Charts from "@/app/posts/[slug]/components/Chart";
+import dynamic from "next/dynamic";
+
+const Codeblock = dynamic(
+  () => import("@/app/posts/[slug]/components/Codeblock"),
+  { ssr: false },
+);
+
+const Charts = dynamic(() => import("@/app/posts/[slug]/components/Chart"), {
+  ssr: false,
+});
 
 export default async function Page({ params }: PostProps) {
   const post: any = await getPost(params.slug);
