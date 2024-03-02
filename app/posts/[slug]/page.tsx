@@ -31,8 +31,8 @@ export default async function Page({ params }: PostProps) {
             <h2 className={`text-3xl text-secondaryAccent`}>{children}</h2>
           ),
           p: ({ children }) => <h2 className={`text-md`}>{children}</h2>,
-          blockquote: ({ children }) => <Blockquote children={children} />,
-          code_block: ({ children }) => <Codeblock children={children} />,
+          blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
+          code_block: ({ children }) => <Codeblock>{children}</Codeblock>,
         }}
       />
       {post.chart ? <Charts post={post} /> : null}
