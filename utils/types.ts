@@ -40,7 +40,6 @@ type PillWrapperProps = {
 
 type PostProps = {
   params: { slug: string };
-  title: string;
 };
 
 type Posts = {
