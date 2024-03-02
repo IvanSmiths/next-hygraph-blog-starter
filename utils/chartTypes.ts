@@ -13,14 +13,14 @@ type Chart = {
 };
 
 type ChartType = {
-  label: Dataset;
-  datasets: Dataset;
+  label: Dataset<string & number>;
+  datasets: Dataset<string & number>;
   type: ValidChartType;
   labels: string[];
 };
 
-type Dataset = {
-  data: string[];
+type Dataset<T> = {
+  data: T[];
   label: string;
 };
 
