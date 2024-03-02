@@ -27,7 +27,9 @@ export default async function Page({ params }: PostProps) {
       <RichText
         content={post.content.raw}
         renderers={{
-          h2: ({ children }) => <h2 className={`text-3xl`}>{children}</h2>,
+          h2: ({ children }) => (
+            <h2 className={`text-3xl text-secondaryAccent`}>{children}</h2>
+          ),
           p: ({ children }) => <h2 className={`text-md`}>{children}</h2>,
           blockquote: ({ children }) => <Blockquote children={children} />,
           code_block: ({ children }) => <Codeblock children={children} />,
