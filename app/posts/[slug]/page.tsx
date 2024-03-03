@@ -2,12 +2,13 @@ import { getPost } from "@/utils/queries";
 import { notFound } from "next/navigation";
 import { PostPage, PostProps } from "@/utils/types";
 import PillWrapper from "@/app/globalComponents/PillWrapper";
-import Time from "@/app/globalComponents/Time";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import Blockquote from "@/app/posts/[slug]/components/Blockquote";
 import dynamic from "next/dynamic";
 import Pill from "@/app/globalComponents/Pill";
 import { Metadata } from "next";
+import AuthorAndTime from "@/app/posts/[slug]/components/AuthorAndTime";
+import CoverImage from "@/app/posts/[slug]/components/CoverImage";
 
 const Codeblock = dynamic(
   () => import("@/app/posts/[slug]/components/Codeblock"),
@@ -58,27 +59,8 @@ export default async function Page({ params }: PostProps) {
           <div className="w-full flex justify-center">
             <PillWrapper map={post} lightBg={false} />
           </div>
-          <div className="flex justify-center items-center gap-2">
-            <img
-              className="w-16 h-16 rounded-[100%]"
-              src={post.author.picture.url}
-              height={post.author.picture.height}
-              width={post.author.picture.width}
-              loading="lazy"
-              alt={post.author.name}
-            />
-            <span>{post.author.name}</span>
-            <span>-</span>
-            <Time date={post.date} />
-          </div>
-          <img
-            className="w-full"
-            src={post.coverImage.url}
-            height={post.coverImage.height}
-            width={post.coverImage.width}
-            loading="lazy"
-            alt={post.coverImage.altText}
-          />
+          <AuthorAndTime post={post} />
+          <CoverImage post={post} />
         </div>
       </div>
       <div className="pt-section flex flex-col items-center flex-wrap h-full w-full">

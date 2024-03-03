@@ -11,11 +11,37 @@ type Author = {
   title: string;
 };
 
+type AuthorAndTimeProps = {
+  post: { author: AuthorInfo; date: string };
+};
+
+type CoverImageProps = {
+  post: { coverImage: CoverImageInfo };
+};
+
+type CoverImageInfo = {
+  url: string;
+  height: number;
+  width: number;
+  altText: string;
+};
+
 type CoverImage = {
   altText: string;
   height: string;
   url: string;
   width: string;
+};
+
+type AuthorInfo = {
+  name: string;
+  picture: PictureInfo;
+};
+
+type PictureInfo = {
+  url: string;
+  height: number;
+  width: number;
 };
 
 type PillProps = {
@@ -89,6 +115,8 @@ type Time = {
 };
 
 export type {
+  AuthorAndTimeProps,
+  CoverImageProps,
   Keywords,
   PillProps,
   PillWrapperProps,
