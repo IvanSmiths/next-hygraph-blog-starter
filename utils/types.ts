@@ -37,9 +37,9 @@ type PillProps = {
 
 type PillWrapperProps = {
   map: {
-    category: string;
-    title: string;
-    excerpt: string;
+    category?: string;
+    title?: string;
+    excerpt?: string;
     stack?: string;
     keywords?: { stack: string[] };
   };
