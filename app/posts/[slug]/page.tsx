@@ -24,13 +24,21 @@ export default async function Page({ params }: PostProps) {
   }
 
   return (
-    <article className="flex flex-col gap-small">
-      <h1 className="text-3xl text-secondaryAccent">{post.title}</h1>
-      <h2>{post.excerpt}</h2>
-      <PillWrapper map={post} lightBg={false} />
-      <div className="flex items-center gap-2">
-        <span className="text-sm font-medium leading-5">Published on:</span>
-        <Time date={post.date} />
+    <article className="flex flex-col gap-small mt-section">
+      <div className="w-full flex justify-center">
+        <div className="flex flex-col gap-regular justify-center items-center w-4/6">
+          <h1 className="text-6xl text-center text-secondaryAccent">
+            {post.title}
+          </h1>
+          <h2 className="text-center">{post.excerpt}</h2>
+          <div className="w-full flex justify-center">
+            <PillWrapper map={post} lightBg={false} />
+          </div>
+          <div className="flex justify-center items-center gap-2">
+            <span className="text-sm font-medium leading-5">Published on:</span>
+            <Time date={post.date} />
+          </div>
+        </div>
       </div>
       <RichText
         content={post.content.raw}

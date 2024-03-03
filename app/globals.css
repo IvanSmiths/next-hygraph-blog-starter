@@ -6,13 +6,14 @@
   /* colors */
   --brand: #6594EE;
   --primary: #161719;
-  --primary-light: #33373d;
+  --primary-light: #2C2F34;
   --primary-lighter: #1D2028;
   --secondary: #BAC1D1;
   --secondary-accent: #FEFEFF;
 
   /* spacing */
   --small: 20px;
+  --regular: 30px;
   --medium: 60px;
   --section: 160px;
 }

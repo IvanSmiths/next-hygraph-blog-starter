@@ -18,6 +18,7 @@ const config: Config = {
       },
       spacing: {
         small: "var(--small)",
+        regular: "var(--regular)",
         medium: "var(--medium)",
         section: "var(--section)",
       },
