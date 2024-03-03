@@ -12,18 +12,11 @@ type Author = {
 };
 
 type AuthorAndTimeProps = {
-  post: { author: AuthorInfo; date: string };
+  post: any;
 };
 
 type CoverImageProps = {
-  post: { coverImage: CoverImageInfo };
-};
-
-type CoverImageInfo = {
-  url: string;
-  height: number;
-  width: number;
-  altText: string;
+  post: any;
 };
 
 type CoverImage = {
@@ -33,15 +26,8 @@ type CoverImage = {
   width: string;
 };
 
-type AuthorInfo = {
-  name: string;
-  picture: PictureInfo;
-};
-
-type PictureInfo = {
-  url: string;
-  height: number;
-  width: number;
+type Hero = {
+  post: { category: string; title: string; excerpt: string };
 };
 
 type PillProps = {
@@ -50,7 +36,13 @@ type PillProps = {
 };
 
 type PillWrapperProps = {
-  map: Keywords;
+  map: {
+    category: string;
+    title: string;
+    excerpt: string;
+    stack?: string;
+    keywords?: string[];
+  };
   lightBg: boolean;
 };
 
@@ -118,6 +110,7 @@ export type {
   AuthorAndTimeProps,
   CoverImageProps,
   Keywords,
+  Hero,
   PillProps,
   PillWrapperProps,
   PostPage,

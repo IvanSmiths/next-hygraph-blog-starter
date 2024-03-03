@@ -1,14 +1,11 @@
 import { getPost } from "@/utils/queries";
 import { notFound } from "next/navigation";
 import { PostPage, PostProps } from "@/utils/types";
-import PillWrapper from "@/app/globalComponents/PillWrapper";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import Blockquote from "@/app/posts/[slug]/components/Blockquote";
 import dynamic from "next/dynamic";
-import Pill from "@/app/globalComponents/Pill";
 import { Metadata } from "next";
-import AuthorAndTime from "@/app/posts/[slug]/components/AuthorAndTime";
-import CoverImage from "@/app/posts/[slug]/components/CoverImage";
+import Hero from "@/app/posts/[slug]/components/Hero";
 
 const Codeblock = dynamic(
   () => import("@/app/posts/[slug]/components/Codeblock"),
@@ -49,20 +46,7 @@ export default async function Page({ params }: PostProps) {
 
   return (
     <article className="flex flex-col gap-small sm:mt-28 mt-medium">
-      <div className="w-full flex justify-center">
-        <div className="flex flex-col gap-regular justify-center items-center w-11/12">
-          <Pill label={post.category} lightBg={false} />
-          <h1 className="md:text-6xl text-3xl text-center text-secondaryAccent md:w-9/12 :w-full">
-            {post.title}
-          </h1>
-          <h2 className="text-center md:w-6/12 :w-full">{post.excerpt}</h2>
-          <div className="w-full flex justify-center">
-            <PillWrapper map={post} lightBg={false} />
-          </div>
-          <AuthorAndTime post={post} />
-          <CoverImage post={post} />
-        </div>
-      </div>
+      <Hero post={post} />
       <div className="pt-section flex flex-col items-center flex-wrap h-full w-full">
         <div className="lg:w-7/12 w-11/12 flex flex-col gap-regular">
           <RichText
