@@ -53,6 +53,7 @@ type PostProps = {
 type Posts = {
   date: string;
   excerpt: string;
+  category?: string;
   id: string;
   keywords: Keywords;
   slug: string;
