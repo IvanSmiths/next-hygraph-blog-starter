@@ -1,31 +1,20 @@
 import { RichTextContent } from "@graphcms/rich-text-types";
 import { Chart } from "@/utils/chartTypes";
 
-type Keywords = {
-  stack: string[];
-  keywords: Stack;
-};
-
-type Stack = {
-  stack: string[];
-};
-
-type QueryResult = {
-  posts: Posts[];
-};
-
-type Response = {
-  data: QueryResult;
-};
-
 type AuthorPicture = CoverImage;
 
-type QueryResultPage = {
-  post: PostPage[];
+type Author = {
+  id: string;
+  name: string;
+  picture: AuthorPicture;
+  remoteTypeName: string;
+  title: string;
 };
 
-type ResponsePage = {
-  data: QueryResultPage;
+type CoverImage = {
+  height: string;
+  url: string;
+  width: string;
 };
 
 type PillProps = {
@@ -43,41 +32,53 @@ type PostProps = {
 };
 
 type Posts = {
-  id: string;
-  slug: string;
-  title: string;
-  excerpt: string;
   date: string;
-  stack: string[];
+  excerpt: string;
+  id: string;
   keywords: Keywords;
+  slug: string;
+  stack: string[];
+  title: string;
 };
 
 type PostPage = {
-  id: string;
-  publishedAt: string;
-  slug: string;
-  title: string;
-  date: string;
-  excerpt: string;
-  keywords: Keywords;
+  author: Author;
+  category: string;
   chart: Chart;
   content: RichTextContent;
   coverImage: CoverImage;
-  author: Author;
-};
-
-type CoverImage = {
-  url: string;
-  width: string;
-  height: string;
-};
-
-type Author = {
-  remoteTypeName: string;
+  date: string;
+  excerpt: string;
   id: string;
-  name: string;
+  keywords: Keywords;
+  publishedAt: string;
+  slug: string;
   title: string;
-  picture: AuthorPicture;
+};
+
+type Keywords = {
+  stack: string[];
+  keywords: Stack;
+};
+
+type QueryResult = {
+  posts: Posts[];
+};
+
+type QueryResultPage = {
+  post: PostPage[];
+};
+
+type Response = {
+  data: QueryResult;
+};
+
+type ResponsePage = {
+  data: QueryResultPage;
+};
+
+type Stack = {
+  stack: string[];
 };
 
 type Time = {
