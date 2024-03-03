@@ -24,7 +24,7 @@ export async function generateMetadata({
   if (!post) return notFound();
   return {
     title: post.title,
-    description: post.description || post.seo?.description,
+    description: post.excerpt || post.seo?.description,
     openGraph: {
       images: [
         {
