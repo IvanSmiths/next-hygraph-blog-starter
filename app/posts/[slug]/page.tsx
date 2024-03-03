@@ -27,7 +27,7 @@ export default async function Page({ params }: PostProps) {
   console.log(post);
 
   return (
-    <article className="flex flex-col gap-small sm:mt-section mt-medium">
+    <article className="flex flex-col gap-small sm:mt-28 mt-medium">
       <div className="w-full flex justify-center">
         <div className="flex flex-col gap-regular justify-center items-center w-11/12">
           <Pill label={post.category} lightBg={false} />
