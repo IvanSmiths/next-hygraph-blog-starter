@@ -12,6 +12,7 @@ type Author = {
 };
 
 type CoverImage = {
+  altText: string;
   height: string;
   url: string;
   width: string;

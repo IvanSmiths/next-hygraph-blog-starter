@@ -41,7 +41,16 @@ export default async function Page({ params }: PostProps) {
             <PillWrapper map={post} lightBg={false} />
           </div>
           <div className="flex justify-center items-center gap-2">
-            <span className="text-sm font-medium leading-5">Published on:</span>
+            <img
+              className="w-16 h-16 rounded-[100%]"
+              src={post.author.picture.url}
+              height={post.author.picture.height}
+              width={post.author.picture.width}
+              loading="lazy"
+              alt={post.author.name}
+            />
+            <span>{post.author.name}</span>
+            <span>-</span>
             <Time date={post.date} />
           </div>
           <img
@@ -50,7 +59,7 @@ export default async function Page({ params }: PostProps) {
             height={post.coverImage.height}
             width={post.coverImage.width}
             loading="lazy"
-            alt=""
+            alt={post.coverImage.altText}
           />
         </div>
       </div>

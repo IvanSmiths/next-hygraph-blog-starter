@@ -77,11 +77,11 @@ async function getPost(slug: string): Promise<PostPage[]> {
                   remoteTypeName: __typename
                   remoteId: id
                   name
-                  title
                   picture {
                     url
                     width
                     height
+                    altText
                   }
                 }
               }
