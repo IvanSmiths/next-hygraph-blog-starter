@@ -9,7 +9,7 @@ const Hero: FC<Hero> = ({ post }) => {
   return (
     <div className="w-full flex justify-center">
       <div className="flex flex-col gap-regular justify-center items-center w-11/12">
-        <Pill label={post.category} lightBg={false} />
+        {post.category ? <Pill label={post.category} lightBg={false} /> : null}
         <h1 className="md:text-6xl text-3xl text-center text-secondaryAccent md:w-9/12 :w-full">
           {post.title}
         </h1>
