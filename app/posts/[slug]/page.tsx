@@ -55,6 +55,9 @@ export default async function Page({ params }: PostProps) {
               h2: ({ children }) => (
                 <h2 className={`text-3xl text-secondaryAccent`}>{children}</h2>
               ),
+              h3: ({ children }) => (
+                <h3 className={`text-2xl text-secondaryAccent`}>{children}</h3>
+              ),
               p: ({ children }) => <h2 className={`text-md`}>{children}</h2>,
               blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
               code_block: ({ children }) => <Codeblock>{children}</Codeblock>,
