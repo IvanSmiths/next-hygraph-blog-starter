@@ -14,7 +14,7 @@ const Post: FC<PostProps> = ({ post }) => {
     <Link href={`posts/${slug}`}>
       <div
         key={id}
-        className="flex flex-col gap-2 bg-primaryLighter p-small rounded-xl"
+        className="flex flex-col gap-small bg-primaryLighter p-small rounded-xl"
       >
         <h3 className="font-bold text-xl text-secondaryAccent">{title}</h3>
         <Time date={date} />
