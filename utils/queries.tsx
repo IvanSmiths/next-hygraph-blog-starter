@@ -70,6 +70,7 @@ async function getPost(slug: string): Promise<PostPage[]> {
                 url
                 width
                 height
+                altText
               }
               author {
                 ... on Author {
