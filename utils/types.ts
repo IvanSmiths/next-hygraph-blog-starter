@@ -41,7 +41,7 @@ type PillWrapperProps = {
     title: string;
     excerpt: string;
     stack?: string;
-    keywords?: string[];
+    keywords?: { stack: string[] };
   };
   lightBg: boolean;
 };
