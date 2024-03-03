@@ -1,12 +1,13 @@
 import { getPost } from "@/utils/queries";
 import { notFound } from "next/navigation";
-import { PostProps } from "@/utils/types";
+import { PostPage, PostProps } from "@/utils/types";
 import PillWrapper from "@/app/globalComponents/PillWrapper";
 import Time from "@/app/globalComponents/Time";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import Blockquote from "@/app/posts/[slug]/components/Blockquote";
 import dynamic from "next/dynamic";
 import Pill from "@/app/globalComponents/Pill";
+import { Metadata } from "next";
 
 const Codeblock = dynamic(
   () => import("@/app/posts/[slug]/components/Codeblock"),
@@ -17,14 +18,33 @@ const Charts = dynamic(() => import("@/app/posts/[slug]/components/Chart"), {
   ssr: false,
 });
 
+export async function generateMetadata({
+  params,
+}: PostProps): Promise<Metadata> {
+  // @ts-ignore
+  const post: PostPage = await getPost(params.slug);
+  if (!post) return notFound();
+  return {
+    title: post.title,
+    description: post.description || post.seo?.description,
+    openGraph: {
+      images: [
+        {
+          url: post.coverImage?.url,
+          width: post.coverImage?.width,
+          height: post.coverImage?.height,
+        },
+      ],
+    },
+  };
+}
+
 export default async function Page({ params }: PostProps) {
   const post: any = await getPost(params.slug);
 
   if (!post) {
     return notFound();
   }
-
-  console.log(post);
 
   return (
     <article className="flex flex-col gap-small sm:mt-28 mt-medium">

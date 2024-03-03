@@ -49,10 +49,12 @@ type PostPage = {
   content: RichTextContent;
   coverImage: CoverImage;
   date: string;
+  description?: string;
   excerpt: string;
   id: string;
   keywords: Keywords;
   publishedAt: string;
+  seo?: { description: string };
   slug: string;
   title: string;
 };
