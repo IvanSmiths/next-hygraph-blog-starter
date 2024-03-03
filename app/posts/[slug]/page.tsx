@@ -6,6 +6,7 @@ import Time from "@/app/globalComponents/Time";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import Blockquote from "@/app/posts/[slug]/components/Blockquote";
 import dynamic from "next/dynamic";
+import Pill from "@/app/globalComponents/Pill";
 
 const Codeblock = dynamic(
   () => import("@/app/posts/[slug]/components/Codeblock"),
@@ -23,10 +24,13 @@ export default async function Page({ params }: PostProps) {
     return notFound();
   }
 
+  console.log(post.category);
+
   return (
     <article className="flex flex-col gap-small mt-section">
       <div className="w-full flex justify-center">
         <div className="flex flex-col gap-regular justify-center items-center w-10/12">
+          <Pill label={post.category} lightBg={false} />
           <h1 className="md:text-6xl text-3xl text-center text-secondaryAccent md:px-10 lg:px-20 px-0">
             {post.title}
           </h1>
