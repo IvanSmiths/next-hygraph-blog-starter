@@ -58,7 +58,18 @@ export default async function Page({ params }: PostProps) {
               h3: ({ children }) => (
                 <h3 className={`text-2xl text-secondaryAccent`}>{children}</h3>
               ),
+              li: ({ children }) => (
+                <li className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 bg-secondary rounded-3xl"></div>
+                  {children}
+                </li>
+              ),
               p: ({ children }) => <h2 className={`text-md`}>{children}</h2>,
+              a: ({ children }) => (
+                <a className={`text-md text-brand font-bold cursor-pointer`}>
+                  {children}
+                </a>
+              ),
               blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
               code_block: ({ children }) => <Codeblock>{children}</Codeblock>,
             }}
