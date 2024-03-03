@@ -31,12 +31,10 @@ export default async function Page({ params }: PostProps) {
       <div className="w-full flex justify-center">
         <div className="flex flex-col gap-regular justify-center items-center w-11/12">
           <Pill label={post.category} lightBg={false} />
-          <h1 className="md:text-6xl text-3xl text-center text-secondaryAccent md:px-10 lg:px-32 px-0">
+          <h1 className="md:text-6xl text-3xl text-center text-secondaryAccent md:w-9/12 :w-full">
             {post.title}
           </h1>
-          <h2 className="text-center md:px-10 lg:px-56 xl:px-64 px-0">
-            {post.excerpt}
-          </h2>
+          <h2 className="text-center md:w-6/12 :w-full">{post.excerpt}</h2>
           <div className="w-full flex justify-center">
             <PillWrapper map={post} lightBg={false} />
           </div>
