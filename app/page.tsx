@@ -8,7 +8,7 @@ export default async function Home() {
 
   return (
     <div className="w-full flex flex-col items-center">
-      <div className="w-5/6 relative lg:w-4/6 pt-section">
+      <div className="w-5/6 relative lg:w-3/6 pt-section">
         <Header />
         <main className="flex flex-col gap-small pt-section">
           <h2 className="text-xl">My Articles:</h2>
