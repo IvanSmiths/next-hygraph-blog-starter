@@ -32,6 +32,7 @@ type Hero = {
 
 type PillProps = {
   label: string;
+  hasIcon?: boolean;
   lightBg: boolean;
 };
 
