@@ -11,7 +11,7 @@ export default async function Home() {
 
   return (
     <>
-      {/* delete from here*/}
+      {/* delete the boilerplate from here*/}
       <section className="w-full flex flex-col items-center mt-section">
         <div className="w-10/12 flex flex-col gap-small">
           <Blob />
