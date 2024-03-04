@@ -19,7 +19,7 @@ const Post: FC<PostProps> = ({ post }) => {
         <h3 className="font-bold text-xl text-secondaryAccent">{title}</h3>
         <Time date={date} />
         <p>{excerpt}</p>
-        <PillWrapper lightBg={true} map={post} />
+        <PillWrapper darkBg={true} map={post} />
       </div>
     </Link>
   );

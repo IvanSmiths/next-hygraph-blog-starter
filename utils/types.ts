@@ -33,12 +33,12 @@ type Hero = {
 type PillProps = {
   label: string;
   hasIcon?: boolean;
-  lightBg: boolean;
+  darkBg: boolean;
 };
 
 type PillWrapperProps = {
   map: any;
-  lightBg: boolean;
+  darkBg: boolean;
 };
 
 type PostProps = {

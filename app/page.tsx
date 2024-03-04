@@ -38,7 +38,7 @@ export default async function Home() {
             target="_blank"
             rel="noopener"
           >
-            <Pill hasIcon={true} label="GitHub" lightBg={false} />
+            <Pill hasIcon={true} label="GitHub" darkBg={false} />
           </a>
         </div>
       </section>
