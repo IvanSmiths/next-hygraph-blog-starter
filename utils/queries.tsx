@@ -51,7 +51,6 @@ async function getPost(slug: string): Promise<PostPage[]> {
       query: `
               query Posts($slug: String!) {
               post(where: { slug: $slug }) {
-              id
               publishedAt
               slug
               category
@@ -62,9 +61,6 @@ async function getPost(slug: string): Promise<PostPage[]> {
               chart
               content {
                 raw
-                html
-                markdown
-                text
               }
               coverImage {
                 url
@@ -74,8 +70,6 @@ async function getPost(slug: string): Promise<PostPage[]> {
               }
               author {
                 ... on Author {
-                  remoteTypeName: __typename
-                  remoteId: id
                   name
                   picture {
                     url
