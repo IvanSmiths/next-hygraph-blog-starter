@@ -1,7 +1,10 @@
+<div style="text-align: center;">
 <img alt="Select Blog Starter" src="public/logo.svg" height="50" width='50'>
 
-# HyBlog, a (work in progress) Next.js & Hygraph typesafe blog starter
-A starter repo for a blog website built with:
+# HyBlog <br> Next.js & Hygraph typesafe blog starter
+</div>
+
+A (work in progress) starter repo for a blog website built with:
 - Next.js (app router)
 - TypeScript
 - Hygraph
