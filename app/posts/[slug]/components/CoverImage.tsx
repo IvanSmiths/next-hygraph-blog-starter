@@ -1,5 +1,17 @@
 import React, { FC } from "react";
-import { CoverImageProps } from "@/utils/types";
+
+type CoverImage = {
+  coverImage: {
+    url: string;
+    height: string;
+    width: string;
+    altText: string;
+  };
+};
+
+type CoverImageProps = {
+  post: CoverImage;
+};
 
 const CoverImage: FC<CoverImageProps> = ({ post }) => {
   return (

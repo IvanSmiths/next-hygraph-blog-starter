@@ -1,7 +1,21 @@
 import { FC } from "react";
 import Time from "@/app/globalComponents/Time";
-import { AuthorAndTimeProps } from "@/utils/types";
 
+type AuthorAndTime = {
+  author: {
+    name: string;
+    picture: {
+      url: string;
+      height: string;
+      width: string;
+    };
+  };
+  date: string;
+};
+
+type AuthorAndTimeProps = {
+  post: AuthorAndTime;
+};
 const AuthorAndTime: FC<AuthorAndTimeProps> = ({ post }) => {
   return (
     <div className="flex justify-center items-center gap-2">

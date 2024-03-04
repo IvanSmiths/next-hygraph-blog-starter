@@ -6,6 +6,7 @@ import Navbar from "@/app/globalComponents/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ivansmiths.com"),
   title: "John Doe here, welcome to my blog",
   description: "My frequent topics are about React, Next.js, HyGraph and more.",
 };

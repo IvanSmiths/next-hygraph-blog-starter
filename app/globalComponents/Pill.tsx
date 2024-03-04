@@ -1,5 +1,10 @@
 import { FC } from "react";
-import { PillProps } from "@/utils/types";
+
+type PillProps = {
+  label: string;
+  hasIcon?: boolean;
+  darkBg: boolean;
+};
 
 const Pill: FC<PillProps> = ({ label, darkBg, hasIcon }) => {
   return (

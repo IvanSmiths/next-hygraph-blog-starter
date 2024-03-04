@@ -1,6 +1,10 @@
 import { FC, Key } from "react";
 import Pill from "@/app/globalComponents/Pill";
-import { PillWrapperProps } from "@/utils/types";
+
+type PillWrapperProps = {
+  map: any;
+  darkBg: boolean;
+};
 
 const PillWrapper: FC<PillWrapperProps> = ({ map, darkBg }) => {
   return (

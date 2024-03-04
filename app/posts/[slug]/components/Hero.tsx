@@ -4,7 +4,29 @@ import PillWrapper from "@/app/globalComponents/PillWrapper";
 import Blob from "@/app/globalComponents/Blob";
 import AuthorAndTime from "@/app/posts/[slug]/components/AuthorAndTime";
 import CoverImage from "@/app/posts/[slug]/components/CoverImage";
-import { Hero } from "@/utils/types";
+
+type Hero = {
+  post: {
+    category: string;
+    title: string;
+    excerpt: string;
+    coverImage: {
+      url: string;
+      height: string;
+      width: string;
+      altText: string;
+    };
+    author: {
+      name: string;
+      picture: {
+        url: string;
+        height: string;
+        width: string;
+      };
+    };
+    date: string;
+  };
+};
 
 const Hero: FC<Hero> = ({ post }) => {
   return (

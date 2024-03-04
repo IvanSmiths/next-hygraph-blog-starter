@@ -1,5 +1,8 @@
 import { FC } from "react";
-import { Time } from "@/utils/types";
+
+type Time = {
+  date: string;
+};
 
 const Time: FC<Time> = ({ date }) => {
   return (

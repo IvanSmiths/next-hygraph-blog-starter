@@ -11,34 +11,11 @@ type Author = {
   title: string;
 };
 
-type AuthorAndTimeProps = {
-  post: any;
-};
-
-type CoverImageProps = {
-  post: any;
-};
-
 type CoverImage = {
   altText: string;
   height: string;
   url: string;
   width: string;
-};
-
-type Hero = {
-  post: { category: string; title: string; excerpt: string };
-};
-
-type PillProps = {
-  label: string;
-  hasIcon?: boolean;
-  darkBg: boolean;
-};
-
-type PillWrapperProps = {
-  map: any;
-  darkBg: boolean;
 };
 
 type PostProps = {
@@ -98,21 +75,4 @@ type Stack = {
   stack: string[];
 };
 
-type Time = {
-  date: string;
-};
-
-export type {
-  AuthorAndTimeProps,
-  CoverImageProps,
-  Keywords,
-  Hero,
-  PillProps,
-  PillWrapperProps,
-  PostPage,
-  PostProps,
-  Posts,
-  Response,
-  ResponsePage,
-  Time,
-};
+export type { Keywords, PostPage, PostProps, Posts, Response, ResponsePage };
