@@ -36,6 +36,51 @@ async function getAllPosts(): Promise<Posts[]> {
   return data.posts;
 }
 
+async function getAllPostsTest(pageNumber: number): Promise<any> {
+  if (!process.env.HYGRAPH_ENDPOINT) {
+    throw new Error("Environment variable HYGRAPH_ENDPOINT is not set.");
+  }
+  const response: globalThis.Response = await fetch(
+    process.env.HYGRAPH_ENDPOINT,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        query: `
+             query PostsPagination {
+              postsConnection(skip:${(pageNumber - 1) * 2}, first: 1) {
+                aggregate {
+                  count
+                }
+                edges {
+                  node {
+                    title
+                    slug
+                    keywords
+                    id
+                    date
+                  }
+                }
+                pageInfo {
+                  endCursor
+                  hasNextPage
+                  hasPreviousPage
+                  pageSize
+                  startCursor
+                }
+              }
+            }
+            `,
+      }),
+    },
+  );
+  const json = await response.json();
+  return json.data;
+}
+
 async function getPost(slug: string): Promise<PostPage[]> {
   if (!process.env.HYGRAPH_ENDPOINT) {
     throw new Error("Environment variable HYGRAPH_ENDPOINT is not set.");
@@ -46,36 +91,38 @@ async function getPost(slug: string): Promise<PostPage[]> {
       "Content-Type": "application/json",
       Accept: "application/json",
     },
-    cache: "no-cache",
     body: JSON.stringify({
       query: `
               query Posts($slug: String!) {
               post(where: { slug: $slug }) {
+              id
               publishedAt
               slug
-              category
               title
               date
               excerpt
               keywords
-              chart
               content {
                 raw
+                html
+                markdown
+                text
               }
               coverImage {
                 url
                 width
                 height
-                altText
               }
               author {
                 ... on Author {
+                  remoteTypeName: __typename
+                  remoteId: id
                   name
+                  title
                   picture {
                     url
                     width
                     height
-                    altText
                   }
                 }
               }
@@ -92,4 +139,4 @@ async function getPost(slug: string): Promise<PostPage[]> {
   return data.post;
 }
 
-export { getAllPosts, getPost };
+export { getAllPosts, getPost, getAllPostsTest };
