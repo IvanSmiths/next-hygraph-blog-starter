@@ -8,7 +8,6 @@ const CoverImage: FC<CoverImageProps> = ({ post }) => {
       src={post.coverImage.url}
       height={post.coverImage.height}
       width={post.coverImage.width}
-      loading="lazy"
       alt={post.coverImage.altText}
     />
   );
