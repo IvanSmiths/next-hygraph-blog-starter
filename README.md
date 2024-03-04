@@ -1,7 +1,15 @@
 <img alt="Select Blog Starter" src="public/logo.svg" height="50" width='50'>
 
 # HyBlog, a (work in progress) Next.js & Hygraph typesafe blog starter
-A starter repo for a blog built with Next.js (app router), Hygraph, TypeScript, Tailwind CSS, Chart.js for data visualisation and React Synthax Highlighter for highlighting code blocks. Home page and blog posts pages are styled, as well as some components (block quotes, chart, code blocks), more components will follow soon.
+A starter repo for a blog website built with:
+- Next.js (app router)
+- TypeScript
+- Hygraph
+- Tailwind CSS
+- Chart.js for data visualisation
+- React Synthax Highlighter for highlighting code blocks.
+
+Home page and blog posts pages are styled, as well as some components (block quotes, chart, code blocks or example), more components will follow soon.
 
 <img alt="Blog" src="public/docs/blog-post.png" height="auto" width='1000'>
 
