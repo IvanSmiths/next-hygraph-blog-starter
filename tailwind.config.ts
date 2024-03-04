@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         brand: "var(--brand)",
+        brandAlpha: "var(--brandAlpha)",
         primary: "var(--primary)",
         primaryLight: "var(--primary-light)",
         primaryLighter: "var(--primary-lighter)",

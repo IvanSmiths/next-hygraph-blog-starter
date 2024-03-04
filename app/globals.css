@@ -5,6 +5,7 @@
 :root {
   /* colors */
   --brand: #6594EE;
+  --brandAlpha: rgba(101, 148, 238, 0.14);
   --primary: #161719;
   --primary-light: #2C2F34;
   --primary-lighter: #1D2028;
