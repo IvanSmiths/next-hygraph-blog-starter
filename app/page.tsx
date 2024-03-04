@@ -15,7 +15,7 @@ export default async function Home() {
       <section className="w-full flex flex-col items-center mt-section">
         <div className="w-10/12 flex flex-col gap-small">
           <Blob />
-          <h1 className="lg:text-8xl md:text-7xl font-bold text-5xl text-secondaryAccent">
+          <h1 className="lg:text-8xl xl:w-11/12 2xl:w-9/12 w-fit md:text-7xl font-bold text-5xl text-secondaryAccent">
             <strong className="bg-gradient-to-r from-secondaryAccent to-brand font-semibold text-transparent h-full pb-3 bg-clip-text">
               HyBlog
             </strong>

@@ -16,9 +16,9 @@ const Post: FC<PostProps> = ({ post }) => {
         key={id}
         className="flex flex-col gap-small bg-primaryLighter p-small rounded-xl"
       >
-        <h3 className="font-bold text-xl text-secondaryAccent">{title}</h3>
+        <h3 className="font-bold text-xl xl:text-2xl text-secondaryAccent">{title}</h3>
         <Time date={date} />
-        <p>{excerpt}</p>
+        <p className="xl:text-lg">{excerpt}</p>
         <PillWrapper darkBg={true} map={post} />
       </div>
     </Link>

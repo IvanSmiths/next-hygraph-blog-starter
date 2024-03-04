@@ -53,23 +53,23 @@ export default async function Page({ params }: PostProps) {
             content={post.content.raw}
             renderers={{
               h2: ({ children }) => (
-                <h2 className={`text-3xl text-secondaryAccent`}>{children}</h2>
+                <h2 className={`text-3xl xl:text-4xl text-secondaryAccent`}>{children}</h2>
               ),
               h3: ({ children }) => (
-                <h3 className={`text-2xl text-secondaryAccent`}>{children}</h3>
+                <h3 className={`text-2xl xl:text-3xl text-secondaryAccent`}>{children}</h3>
               ),
               li: ({ children }) => (
                 <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-secondary rounded-3xl"></div>
+                  <div className="w-1.5 h-1.5 bg-secondary xl:text-lg rounded-3xl"></div>
                   {children}
                 </li>
               ),
-              p: ({ children }) => <h2 className={`text-md`}>{children}</h2>,
+              p: ({ children }) => <h2 className={`text-md xl:text-lg`}>{children}</h2>,
               a: ({ children, href, openInNewTab }) => (
                 <a
                   href={href}
                   target={openInNewTab ? "_blank" : "_self"}
-                  className={`text-md text-brand font-bold cursor-pointer`}
+                  className={`text-md xl:text-lg text-brand font-bold cursor-pointer`}
                   rel="noreferrer"
                 >
                   {children}

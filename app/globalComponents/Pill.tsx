@@ -9,7 +9,7 @@ type PillProps = {
 const Pill: FC<PillProps> = ({ label, darkBg, hasIcon }) => {
   return (
     <span
-      className={`${darkBg ? "bg-primary" : "bg-primaryLighter"} ${hasIcon ? "flex justify-center items-center gap-3" : null} p-3 rounded-xl w-fit`}
+      className={`${darkBg ? "bg-primary" : "bg-primaryLighter"} ${hasIcon ? "flex justify-center items-center gap-3" : null} p-3 rounded-xl xl:text-lg w-fit`}
     >
       {label}
       {hasIcon ? (
