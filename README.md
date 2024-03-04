@@ -1,5 +1,5 @@
-<div style="display: flex; justify-content: center; align-items: center; padding-top: 2rem">
-<img alt="Select Blog Starter" src="public/logo.svg" height="70" width='70'>
+<div style="width:100%; display: flex; justify-content: center; align-items: center; padding-top: 2rem">
+<img alt="Select Blog Starter" src="public/logo.svg" height="50" width='50'>
 </div>
 
 # HyBlog, a (work in progress) Next.js & Hygraph typesafe blog starter
