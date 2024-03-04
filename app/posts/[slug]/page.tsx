@@ -44,8 +44,6 @@ export default async function Page({ params }: PostProps) {
     return notFound();
   }
 
-  console.log(post.content.raw.children[2].children[0].children[0].children);
-
   return (
     <article className="flex flex-col gap-small sm:mt-28 mt-medium">
       <Hero post={post} />
@@ -67,6 +65,16 @@ export default async function Page({ params }: PostProps) {
                 </li>
               ),
               p: ({ children }) => <h2 className={`text-md`}>{children}</h2>,
+              a: ({ children, href, openInNewTab }) => (
+                <a
+                  href={href}
+                  target={openInNewTab ? "_blank" : "_self"}
+                  className={`text-md text-brand font-bold cursor-pointer`}
+                  rel="noreferrer"
+                >
+                  {children}
+                </a>
+              ),
               blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
               code_block: ({ children }) => <Codeblock>{children}</Codeblock>,
             }}
